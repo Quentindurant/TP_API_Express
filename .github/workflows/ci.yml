@@ -17,6 +17,9 @@ jobs:
           port: ${{ secrets.SERVER_PORT }}
           script: |
             cd ${{ secrets.PROJECT_PATH }}
+            pwd
+            ls -la
+            git status
             git pull
             npm install --production
             npx pm2 reload ecosystem.config.js --env production || npx pm2 start ecosystem.config.js --env production
