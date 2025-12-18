@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Télécharger l'image</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<%- include('partials/head.ejs') %>
+
+    <body>
+
+
+        <div class="download-container">
+            <h1>📥 Télécharger l'image</h1>
+
+            <img src="/images/sticker-mural-troll-face-02-1.jpg" alt="Image à télécharger" class="preview-img">
+
+            <a href="/fs/download" class="btn-download">
+                ⬇️ Télécharger l'image
+            </a>
+
+            <p class="info">
+                Cliquez sur le bouton pour télécharger l'image troll face 😄
+            </p>
+        </div>
+    </body>
+    <%- include('partials/footer.ejs') %>
+
+</html>
