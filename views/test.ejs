@@ -9,10 +9,28 @@
                 <%= message %>
             </p>
 
-            <div style="margin-top: 2rem;">
-                <a href="/login" class="btn btn-warning">🔓 Déconnexion</a>
-                <a href="/" class="btn btn-primary">🏠 Retour à l'accueil</a>
-            </div>
+            <% if (typeof username !=='undefined' ) { %>
+                <div
+                    style="background: linear-gradient(135deg, var(--success), #00d9ff); color: white; padding: 1.5rem; border-radius: 15px; margin-top: 2rem;">
+                    <h2 style="color: white; margin: 0; font-size: 1.5rem;">🎉 Session Active 🎉</h2>
+                    <p style="margin: 0.5rem 0 0 0; font-size: 1.1rem;">
+                        👤 Utilisateur: <strong>
+                            <%= username %>
+                        </strong><br>
+                        <% if (isAdmin) { %>
+                            🔑 Statut: <strong>Administrateur</strong>
+                            <% } else { %>
+                                📚 Statut: <strong>Élève</strong>
+                                <% } %>
+                    </p>
+                </div>
+                <% } %>
+
+                    <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="/logout" class="btn btn-warning">🔓 Déconnexion</a>
+                        <a href="/" class="btn btn-primary">🏠 Retour à l'accueil</a>
+                        <a href="/tchat" class="btn btn-success">💬 Aller au Chat</a>
+                    </div>
         </div>
     </div>
 

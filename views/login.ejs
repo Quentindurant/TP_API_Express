@@ -1,0 +1,60 @@
+<%- include('partials/head.ejs') %>
+
+    <div class="container fade-in-up">
+        <div class="card text-center" style="max-width: 500px; margin: 4rem auto;">
+            <h1>🔐 Connexion avec Session 🔐</h1>
+            <h2 style="font-size: 1.3rem; color: var(--text-light);">Entre tes identifiants pour créer une session !
+            </h2>
+
+            <% if (typeof error !=='undefined' ) { %>
+                <div
+                    style="background: linear-gradient(135deg, #fb5607, #ff006e); color: white; padding: 1rem; border-radius: 10px; margin-top: 1rem;">
+                    <strong>
+                        <%= error %>
+                    </strong>
+                </div>
+                <% } %>
+
+                    <form action="/login" method="POST" style="margin-top: 2rem;">
+                        <div style="margin-bottom: 1.5rem; text-align: left;">
+                            <label for="username"
+                                style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--secondary);">
+                                👤 Nom d'utilisateur:
+                            </label>
+                            <input type="text" id="username" name="username" required autofocus>
+                        </div>
+
+                        <div style="margin-bottom: 2rem; text-align: left;">
+                            <label for="password"
+                                style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--secondary);">
+                                🔑 Mot de passe:
+                            </label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            Se connecter
+                        </button>
+                    </form>
+
+                    <div
+                        style="margin-top: 1.5rem; padding: 1rem; background: rgba(131, 56, 236, 0.1); border-radius: 10px;">
+                        <p style="margin: 0; font-size: 0.9rem; color: var(--text-light);">
+                            💡 <strong>Test:</strong> admin/admin ou mds/mds
+                        </p>
+                    </div>
+        </div>
+
+        <div class="card" style="max-width: 700px; margin: 2rem auto;">
+            <h2>🔐 Comment ça marche ?</h2>
+            <ul style="font-size: 1rem; line-height: 2; text-align: left;">
+                <li>✅ <strong>Session créée</strong> : Quand tu te connectes, le serveur crée une session</li>
+                <li>🍪 <strong>Cookie envoyé</strong> : Ton navigateur reçoit un cookie avec un ID de session</li>
+                <li>🔄 <strong>Reconnaissance</strong> : À chaque requête, le serveur te reconnaît grâce au cookie</li>
+                <li>⏰ <strong>Durée</strong> : La session dure 24 heures</li>
+                <li>🔓 <strong>Déconnexion</strong> : Clique sur "Déconnexion" pour détruire la session</li>
+            </ul>
+        </div>
+    </div>
+
+    <%- include('partials/footer.ejs') %>
