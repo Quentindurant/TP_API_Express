@@ -6,8 +6,21 @@ router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+// 📄 Route /test - Lit la session pour afficher les infos
 router.get('/test', function (req, res, next) {
-  res.render('test', { title: 'Test Page', message: 'le caca est cuit ' });
+  // Vérifier si l'utilisateur est connecté
+  if (req.session.username) {
+    // ✅ Connecté - Affiche les infos depuis la session
+    res.render('test', {
+      title: req.session.isAdmin ? 'Page Admin' : 'Page Élève',
+      message: `Bienvenue ${req.session.username} ! 🎉`,
+      username: req.session.username,
+      isAdmin: req.session.isAdmin
+    });
+  } else {
+    // ❌ Pas connecté - Redirige vers login
+    res.redirect('/login');
+  }
 });
 
 router.get('/login', function (req, res, next) {
