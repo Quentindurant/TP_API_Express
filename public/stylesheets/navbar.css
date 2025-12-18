@@ -1,7 +1,7 @@
 /* 🎨 NAVBAR FUN ET SATURÉE 🎨 */
 
 .navbar {
-    background: linear-gradient(135deg, #ff006e 0%, #8338ec 50%, #3a86ff 100%);
+    background: linear-gradient(135deg, #ff6600 0%, #38ec65 50%, #3a86ff 100%);
     padding: 1rem 2rem;
     box-shadow: 0 4px 20px rgba(255, 0, 110, 0.3);
     position: sticky;

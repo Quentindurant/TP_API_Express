@@ -4,8 +4,8 @@
 
 :root {
   /* Couleurs saturées et fun */
-  --primary: #ff006e;
-  --secondary: #8338ec;
+  --primary: #ff6600;
+  --secondary: #38ec65;
   --accent: #3a86ff;
   --warning: #ffbe0b;
   --success: #06ffa5;
@@ -28,7 +28,7 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #ff6600 0%, #38ec65 100%);
   min-height: 100vh;
   color: var(--text-dark);
   line-height: 1.6;
@@ -248,7 +248,7 @@ a:hover {
   max-width: 600px;
   margin: 100px auto;
   padding: 40px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #ff6600 0%, #38ec65 100%);
   border-radius: 20px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
   text-align: center;
@@ -293,9 +293,6 @@ a:hover {
 }
 
 /* Styles spécifiques au chat par-dessus les styles globaux */
-body {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
 
 .chat-container {
   max-width: 900px;
@@ -307,7 +304,7 @@ body {
   background: white;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(131, 56, 236, 0.3);
+  box-shadow: 0 20px 60px rgb(255, 208, 0);
   border: 3px solid transparent;
   background-clip: padding-box;
   position: relative;
@@ -320,13 +317,13 @@ body {
   left: -3px;
   right: -3px;
   bottom: -3px;
-  background: linear-gradient(135deg, #ff006e, #8338ec, #3a86ff);
+  background: linear-gradient(135deg, #ff6600, #38ec65, #3a86ff);
   border-radius: 20px;
   z-index: -1;
 }
 
 .chat-header {
-  background: linear-gradient(135deg, #ff006e 0%, #8338ec 50%, #3a86ff 100%);
+  background: linear-gradient(135deg, #ff6600 0%, #38ec65 50%, #3a86ff 100%);
   padding: 1.5rem;
   text-align: center;
   color: white;
@@ -358,11 +355,11 @@ body {
   background: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   animation: slideIn 0.3s ease-out;
-  border-left: 4px solid #8338ec;
+  border-left: 4px solid #ff6600;
 }
 
 #tchat li:nth-child(odd) {
-  border-left-color: #ff006e;
+  border-left-color: #ff6600;
 }
 
 #tchat li:nth-child(even) {
@@ -386,12 +383,12 @@ body {
   padding: 1.5rem;
   display: flex;
   gap: 1rem;
-  border-top: 3px solid #8338ec;
+  border-top: 3px solid #ff6600;
 }
 
 #input {
   flex-grow: 1;
-  border: 3px solid #8338ec;
+  border: 3px solid #ff6600;
   padding: 1rem 1.5rem;
   border-radius: 50px;
   font-size: 1rem;
@@ -401,12 +398,12 @@ body {
 
 #input:focus {
   outline: none;
-  border-color: #ff006e;
+  border-color: #ff6600;
   box-shadow: 0 0 20px rgba(255, 0, 110, 0.3);
 }
 
 #form button {
-  background: linear-gradient(135deg, #ff006e, #8338ec);
+  background: linear-gradient(135deg, #ff6600, #38ec65);
   color: white;
   border: none;
   padding: 1rem 2.5rem;

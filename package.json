@@ -8,6 +8,8 @@
   },
   "dependencies": {
     "@auth/express": "^0.12.1",
+    "@prisma/client": "^7.2.0",
+    "better-sqlite3": "^12.5.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "^3.1.10",
@@ -19,5 +21,8 @@
     "nodemon": "^2.0.22",
     "request": "^2.88.2",
     "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "prisma": "^7.2.0"
   }
 }
