@@ -1,11 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>caca</h1>
-</body>
-</html>
+<%- include('partials/head.ejs') %>
+
+    <div class="container fade-in-up">
+        <div class="card text-center">
+            <h1>🎉 Bienvenue sur l'App ! 🎉</h1>
+            <h2>Hésite pas à cliquer, promis je te pirate pas 😜</h2>
+
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+                <a href="/test" class="btn btn-primary">🧪 Page Test</a>
+                <a href="/login" class="btn btn-success">🔐 Se Connecter</a>
+                <a href="/tchat" class="btn btn-warning">💬 Parler avec les copains</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>✨ Fonctionnalités</h2>
+            <ul style="font-size: 1.1rem; line-height: 2;">
+                <li>🚀 Chat en temps réel avec Socket.io</li>
+                <li>🎨 Design saturé et fun</li>
+                <li>📱 100% Responsive</li>
+                <li>🌈 Animations et effets cool</li>
+            </ul>
+        </div>
+    </div>
+
+    <%- include('partials/footer.ejs') %>

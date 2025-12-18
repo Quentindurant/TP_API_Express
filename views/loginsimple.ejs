@@ -1,0 +1,38 @@
+<%- include('partials/head.ejs') %>
+
+    <div class="container fade-in-up">
+        <div class="card text-center" style="max-width: 500px; margin: 4rem auto;">
+            <h1>🔐 Connexion 🔐</h1>
+            <h2 style="font-size: 1.3rem; color: var(--text-light);">Entre tes identifiants !</h2>
+
+            <form action="/login" method="POST" style="margin-top: 2rem;">
+                <div style="margin-bottom: 1.5rem; text-align: left;">
+                    <label for="username"
+                        style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--secondary);">
+                        👤 Nom d'utilisateur:
+                    </label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+
+                <div style="margin-bottom: 2rem; text-align: left;">
+                    <label for="password"
+                        style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--secondary);">
+                        🔑 Mot de passe:
+                    </label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    Se connecter
+                </button>
+            </form>
+
+            <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(131, 56, 236, 0.1); border-radius: 10px;">
+                <p style="margin: 0; font-size: 0.9rem; color: var(--text-light);">
+                    💡 <strong>Test:</strong> admin/admin ou mds/mds
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <%- include('partials/footer.ejs') %>

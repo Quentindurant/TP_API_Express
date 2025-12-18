@@ -1,10 +1,19 @@
+<%- include('partials/head.ejs') %>
 
+    <div class="container fade-in-up">
+        <div class="card text-center">
+            <h1>
+                <%= title %>
+            </h1>
+            <p style="font-size: 1.3rem; color: var(--text-dark); margin-top: 1rem;">
+                <%= message %>
+            </p>
 
-<%-include("partials/head.ejs") %>
-<body>
-    <h1>Test Page</h1>
-    <%= message %>
-    
-<%-include("partials/footer.ejs") %>
-</body>
+            <div style="margin-top: 2rem;">
+                <a href="/login" class="btn btn-warning">🔓 Déconnexion</a>
+                <a href="/" class="btn btn-primary">🏠 Retour à l'accueil</a>
+            </div>
+        </div>
+    </div>
 
+    <%- include('partials/footer.ejs') %>

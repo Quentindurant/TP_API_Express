@@ -1,20 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         <%= title %>
     </title>
-    <style>
-        /* Si isAdmin est true -> fond Orange, Sinon -> fond Blanc */
-        body {
-            background-color: <%=isAdmin ? 'orange': 'white' %>;
-        }
-    </style>
+
+    <!-- Styles CSS -->
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/navbar.css">
 </head>
 
 <body>
-    <nav style="background: #eee; padding: 10px;">
-        Statut : <%= isAdmin ? 'ADMINISTRATEUR' : 'Visiteur' %>
-    </nav>
+    <%- include('navbar.ejs') %>

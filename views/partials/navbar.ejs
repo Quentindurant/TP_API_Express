@@ -1,0 +1,40 @@
+<nav class="navbar">
+    <div class="navbar-container">
+        <a href="/" class="navbar-logo">🚀 APP</a>
+
+        <button class="navbar-toggle" id="navbar-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="navbar-menu" id="navbar-menu">
+            <li><a href="/" class="navbar-link">🏠 Accueil</a></li>
+            <li><a href="/test" class="navbar-link">🧪 Test</a></li>
+            <li><a href="/login" class="navbar-link">🔐 Login</a></li>
+            <li><a href="/tchat" class="navbar-link">💬 Chat</a></li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    // Menu hamburger toggle
+    const navbarToggle = document.getElementById('navbar-toggle');
+    const navbarMenu = document.getElementById('navbar-menu');
+
+    if (navbarToggle) {
+        navbarToggle.addEventListener('click', () => {
+            navbarToggle.classList.toggle('active');
+            navbarMenu.classList.toggle('active');
+        });
+
+        // Fermer le menu en cliquant sur un lien
+        const navbarLinks = document.querySelectorAll('.navbar-link');
+        navbarLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navbarToggle.classList.remove('active');
+                navbarMenu.classList.remove('active');
+            });
+        });
+    }
+</script>
