@@ -1,23 +1,34 @@
-/* 🌈 STYLES GLOBAUX FUN ET COLORÉS 🌈 */
+/* Modern Clean Design */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 :root {
-  /* Couleurs saturées et fun */
-  --primary: #ff6600;
-  --secondary: #38ec65;
-  --accent: #3a86ff;
-  --warning: #ffbe0b;
-  --success: #06ffa5;
-  --danger: #fb5607;
+  /* Modern Color Palette */
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --secondary: #64748b;
+  --accent: #10b981;
+  --accent-hover: #059669;
 
   /* Backgrounds */
-  --bg-main: #f8f9fa;
+  --bg-main: #f8fafc;
   --bg-card: #ffffff;
+  --bg-hover: #f1f5f9;
 
-  /* Texte */
-  --text-dark: #2b2d42;
-  --text-light: #8d99ae;
+  /* Text */
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+
+  /* Borders */
+  --border-color: #e2e8f0;
+  --border-radius: 12px;
+  --border-radius-lg: 16px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -27,10 +38,10 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #ff6600 0%, #38ec65 100%);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg-main);
   min-height: 100vh;
-  color: var(--text-dark);
+  color: var(--text-primary);
   line-height: 1.6;
 }
 
@@ -41,172 +52,131 @@ body {
   padding: 2rem;
 }
 
-/* Cards fun */
+/* Modern Cards */
 .card {
   background: var(--bg-card);
-  border-radius: 20px;
+  border-radius: var(--border-radius-lg);
   padding: 2rem;
-  box-shadow: 0 10px 40px rgba(131, 56, 236, 0.2);
+  box-shadow: var(--shadow-md);
   margin: 2rem 0;
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  border: 3px solid transparent;
-  background-clip: padding-box;
-  position: relative;
-}
-
-.card::before {
-  content: '';
-  position: absolute;
-  top: -3px;
-  left: -3px;
-  right: -3px;
-  bottom: -3px;
-  background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
-  border-radius: 20px;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease;
 }
 
 .card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 20px 60px rgba(255, 0, 110, 0.3);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
 }
 
-.card:hover::before {
-  opacity: 1;
-}
-
-/* Titres avec style */
+/* Headings */
 h1 {
-  font-size: 3rem;
-  font-weight: 900;
-  background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
   margin-bottom: 1rem;
-  animation: rainbow-text 5s ease-in-out infinite;
-}
-
-@keyframes rainbow-text {
-
-  0%,
-  100% {
-    filter: hue-rotate(0deg);
-  }
-
-  50% {
-    filter: hue-rotate(30deg);
-  }
+  letter-spacing: -0.025em;
 }
 
 h2 {
-  font-size: 2rem;
-  color: var(--secondary);
-  margin-bottom: 1rem;
+  font-size: 1.875rem;
   font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
 }
 
-/* Boutons super fun */
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+/* Modern Buttons */
 .btn {
   display: inline-block;
-  padding: 1rem 2.5rem;
-  font-size: 1.1rem;
-  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
   text-decoration: none;
-  border-radius: 50px;
+  border-radius: var(--border-radius);
   border: none;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  position: relative;
-  overflow: hidden;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.btn::before {
-  content: '🚀';
-  position: absolute;
-  left: -30px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.5rem;
-  transition: left 0.3s ease;
-}
-
-.btn:hover::before {
-  left: 10px;
-}
-
-.btn:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  padding-left: 3.5rem;
-}
-
-.btn:active {
-  transform: translateY(0) scale(0.98);
+  transition: all 0.2s ease;
+  font-family: inherit;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background: var(--primary);
   color: white;
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, var(--secondary), var(--accent));
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
 
 .btn-success {
-  background: linear-gradient(135deg, var(--success), #00d9ff);
+  background: var(--accent);
   color: white;
+}
+
+.btn-success:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
 
 .btn-warning {
-  background: linear-gradient(135deg, var(--warning), var(--danger));
+  background: var(--secondary);
   color: white;
 }
 
-/* Inputs fun */
+.btn-warning:hover {
+  background: #475569;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Inputs */
 input[type="text"],
 input[type="password"],
 input[type="email"],
 textarea {
   width: 100%;
-  padding: 1rem 1.5rem;
+  padding: 0.75rem 1rem;
   font-size: 1rem;
-  border: 3px solid var(--accent);
-  border-radius: 15px;
-  font-family: 'Poppins', sans-serif;
-  transition: all 0.3s ease;
-  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-family: inherit;
+  transition: all 0.2s ease;
+  background: white;
 }
 
 input:focus,
 textarea:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 20px rgba(255, 0, 110, 0.3);
-  transform: scale(1.02);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
-/* Liste stylée */
+/* Lists */
 ul {
   list-style: none;
 }
 
-/* Liens */
+/* Links */
 a {
-  color: var(--accent);
-  transition: color 0.3s ease;
+  color: var(--primary);
+  transition: color 0.2s ease;
+  text-decoration: none;
 }
 
 a:hover {
-  color: var(--primary);
+  color: var(--primary-hover);
 }
 
-/* Utilitaires */
+/* Utilities */
 .text-center {
   text-align: center;
 }
@@ -227,73 +197,57 @@ a:hover {
   margin-bottom: 2rem;
 }
 
-/* Animations d'entrée */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in-up {
-  animation: fadeInUp 0.6s ease-out;
-}
-
+/* Download Page */
 .download-container {
   max-width: 600px;
   margin: 100px auto;
-  padding: 40px;
-  background: linear-gradient(135deg, #ff6600 0%, #38ec65 100%);
-  border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  padding: 3rem;
+  background: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
   text-align: center;
+  border: 1px solid var(--border-color);
 }
 
 .download-container h1 {
-  color: white;
-  margin-bottom: 30px;
-  font-size: 2.5em;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
 }
 
 .preview-img {
   max-width: 300px;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-  margin: 20px auto;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  margin: 1.5rem auto;
+  border: 1px solid var(--border-color);
 }
 
 .btn-download {
   display: inline-block;
-  padding: 20px 40px;
-  background: #4CAF50;
+  padding: 1rem 2rem;
+  background: var(--accent);
   color: white;
   text-decoration: none;
-  border-radius: 15px;
-  font-size: 20px;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  margin-top: 20px;
+  border-radius: var(--border-radius);
+  font-size: 1.125rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  margin-top: 1.5rem;
 }
 
 .btn-download:hover {
-  background: #45a049;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .info {
-  color: white;
-  margin-top: 20px;
-  font-size: 14px;
+  color: var(--text-secondary);
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
 }
 
-/* Styles spécifiques au chat par-dessus les styles globaux */
-
+/* Chat Styles */
 .chat-container {
   max-width: 900px;
   margin: 2rem auto;
@@ -301,29 +255,15 @@ a:hover {
 }
 
 .chat-box {
-  background: white;
-  border-radius: 20px;
+  background: var(--bg-card);
+  border-radius: var(--border-radius-lg);
   overflow: hidden;
-  box-shadow: 0 20px 60px rgb(255, 208, 0);
-  border: 3px solid transparent;
-  background-clip: padding-box;
-  position: relative;
-}
-
-.chat-box::before {
-  content: '';
-  position: absolute;
-  top: -3px;
-  left: -3px;
-  right: -3px;
-  bottom: -3px;
-  background: linear-gradient(135deg, #ff6600, #38ec65, #3a86ff);
-  border-radius: 20px;
-  z-index: -1;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
 }
 
 .chat-header {
-  background: linear-gradient(135deg, #ff6600 0%, #38ec65 50%, #3a86ff 100%);
+  background: var(--primary);
   padding: 1.5rem;
   text-align: center;
   color: white;
@@ -331,11 +271,8 @@ a:hover {
 
 .chat-header h1 {
   color: white;
-  -webkit-text-fill-color: white;
-  background: none;
   margin: 0;
-  font-size: 2rem;
-  animation: none;
+  font-size: 1.875rem;
 }
 
 #tchat {
@@ -345,81 +282,87 @@ a:hover {
   min-height: 400px;
   max-height: 500px;
   overflow-y: auto;
-  background: #f8f9fa;
+  background: var(--bg-main);
 }
 
 #tchat li {
-  padding: 1rem 1.5rem;
-  margin: 0.5rem 0;
-  border-radius: 15px;
+  padding: 1rem 1.25rem;
+  margin: 0.75rem 0;
+  border-radius: var(--border-radius);
   background: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  animation: slideIn 0.3s ease-out;
-  border-left: 4px solid #ff6600;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease;
 }
 
-#tchat li:nth-child(odd) {
-  border-left-color: #ff6600;
+#tchat li:hover {
+  box-shadow: var(--shadow-md);
 }
 
-#tchat li:nth-child(even) {
-  border-left-color: #3a86ff;
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+#tchat li strong {
+  color: var(--primary);
+  font-weight: 600;
 }
 
 #form {
-  background: linear-gradient(135deg, rgba(255, 0, 110, 0.1), rgba(131, 56, 236, 0.1));
+  background: white;
   padding: 1.5rem;
   display: flex;
   gap: 1rem;
-  border-top: 3px solid #ff6600;
+  border-top: 1px solid var(--border-color);
 }
 
 #input {
   flex-grow: 1;
-  border: 3px solid #ff6600;
-  padding: 1rem 1.5rem;
-  border-radius: 50px;
+  border: 1px solid var(--border-color);
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius);
   font-size: 1rem;
-  font-family: 'Poppins', sans-serif;
-  transition: all 0.3s ease;
+  font-family: inherit;
+  transition: all 0.2s ease;
 }
 
 #input:focus {
   outline: none;
-  border-color: #ff6600;
-  box-shadow: 0 0 20px rgba(255, 0, 110, 0.3);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
 #form button {
-  background: linear-gradient(135deg, #ff6600, #38ec65);
+  background: var(--primary);
   color: white;
   border: none;
-  padding: 1rem 2.5rem;
-  border-radius: 50px;
-  font-weight: 700;
+  padding: 0.75rem 2rem;
+  border-radius: var(--border-radius);
+  font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  text-transform: uppercase;
+  transition: all 0.2s ease;
 }
 
 #form button:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 10px 30px rgba(255, 0, 110, 0.3);
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
 
 #form button:active {
-  transform: translateY(0) scale(0.98);
+  transform: translateY(0);
+}
+
+/* Fade in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.4s ease-out;
 }

@@ -12,8 +12,19 @@ router.get('/courses', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+router.get('/courses/:id', async (req, res) => {
+  try {
+    const course = await prisma.courses.findUnique({
+      where: {
+        id: parseInt(req.params.id)
+      }
+    });
+    res.json(course);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
 
-// POST /api/courses - Créer un cours
 router.post('/courses', async (req, res) => {
   try {
     const { title, price, instructor_id } = req.body;
