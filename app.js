@@ -8,6 +8,7 @@ var session = require('express-session'); // 🔐 Import pour les sessions
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var fsRouter = require('./routes/fs');
+var apiRouter = require('./routes/api');
 
 var app = express();
 
@@ -34,6 +35,7 @@ app.use(session({
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/fs', fsRouter);
+app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
